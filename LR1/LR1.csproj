@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27946B51-9E48-495E-95FE-59610DC9E93F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LR1</RootNamespace>
+    <AssemblyName>LR1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreatorForm\CreatorModel.cs" />
+    <Compile Include="Data\Library.cs" />
+    <Compile Include="Data\ModalErrorCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\ModalErrorCreator.Designer.cs">
+      <DependentUpon>ModalErrorCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Planet.cs" />
+    <Compile Include="FilterForm\Filter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilterForm\Filter.Designer.cs">
+      <DependentUpon>Filter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FilterForm\FilterModel.cs" />
+    <Compile Include="FilterForm\FilterPresenter.cs" />
+    <Compile Include="FilterForm\IFilterModel.cs" />
+    <Compile Include="FilterForm\IFilterView.cs" />
+    <Compile Include="ISearchModel.cs" />
+    <Compile Include="ISearchView.cs" />
+    <Compile Include="MainForm\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatorForm\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatorForm\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatorForm\ICreatorModel.cs" />
+    <Compile Include="CreatorForm\CreatorPresenter.cs" />
+    <Compile Include="CreatorForm\ICreatorView.cs" />
+    <Compile Include="MainForm\IMainModel.cs" />
+    <Compile Include="MainForm\IMainView.cs" />
+    <Compile Include="BasedInterface\IPresenter.cs" />
+    <Compile Include="BasedInterface\IView.cs" />
+    <Compile Include="MainForm\MainModel.cs" />
+    <Compile Include="MainForm\MainPresenter.cs" />
+    <Compile Include="Data\PlanetData.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchModel.cs" />
+    <Compile Include="SearcherPlanet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearcherPlanet.Designer.cs">
+      <DependentUpon>SearcherPlanet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPresenter.cs" />
+    <EmbeddedResource Include="FilterForm\Filter.resx">
+      <DependentUpon>Filter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatorForm\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ModalErrorCreator.resx">
+      <DependentUpon>ModalErrorCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SearcherPlanet.resx">
+      <DependentUpon>SearcherPlanet.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
